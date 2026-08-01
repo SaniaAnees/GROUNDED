@@ -20,7 +20,6 @@ def main():
     echunk=embed(folder)
     schunk=retrieve(echunk,q)
     result=generate(schunk,q)
-    return result
+    return resnklklnklnknlknult
 if __name__=="__main__":
-    result=main()
-    print(result)
+    main()
