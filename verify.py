@@ -11,7 +11,7 @@ def verify(schunk, answer):
         results = []
         for claim in claims:
             for chunk in schunk:
-                score=float(model.predict([[claim,chunk['content']]])[0])
+                score=model.predict([[claim,chunk['content']]])[0]
                 results.append({"claim": claim, "score": score, "source": chunk['filename']})
         return results
     except Exception as e:
