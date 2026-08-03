@@ -10,7 +10,9 @@
 
 ## The Problem
 Question: "How many bytes of memory does CHIP-8 have?"
+
 LLM Answer: "This code defines functions related to pixel formats..." ❌
+
 GROUNDED: "Score: 0.56 - HALLUCINATION DETECTED" ✅
 
 ## How It Works
@@ -26,7 +28,6 @@ Question → [Embed] → [Retrieve] → [Generate] → [Verify] → Confidence S
 
 ## Demo Pipeline
 
-![Full Pipeline](./assets/main.png)
 *Complete verification workflow end-to-end*
 
 ### Stage-by-Stage Screenshots
@@ -34,8 +35,8 @@ Question → [Embed] → [Retrieve] → [Generate] → [Verify] → Confidence S
 ![Ingestion](./assets/ingest.png)
 *95 files loaded recursively from corpus*
 
-![Embedding Stage](./assets/embed1.png)
-(./assets/embed2.png)
+![Embedding Stage 1](./assets/embed1.png)
+![Embedding Stage 2](./assets/embed2.png)
 *Vector embeddings generated from text chunks*
 
 ![Retrieval](./assets/retrieve.png)
@@ -47,9 +48,9 @@ Question → [Embed] → [Retrieve] → [Generate] → [Verify] → Confidence S
 ![Verification](./assets/verify.png)
 *Claim-by-claim verification with confidence*
 
-![Main Output](./assets/main1.png)
-(./assets/main2.png)
-(./assets/main3.png)
+![Main Output 1](./assets/main1.png)
+![Main Output 2](./assets/main2.png)
+![Main Output 3](./assets/main3.png)
 *Full pipeline with verification scores*
 
 ## Tech Stack
@@ -98,7 +99,9 @@ python main.py
 ### requirements.txt
 
 sentence-transformers==2.2.2
+
 ollama==0.1.25
+
 numpy==1.24.3
 
 
