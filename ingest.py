@@ -15,7 +15,7 @@ def ingest(folder_path):
             continue
     return file
 def main():
-    folder=input("enter the path for the folder")
+    folder=input("Enter the path for the folder : ")
     return ingest(folder)
 if __name__=="__main__":
    result = main()

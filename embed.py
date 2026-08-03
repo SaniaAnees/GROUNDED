@@ -7,12 +7,12 @@ def embed(chunk):
     return chunk
 
 def main():
-    folder=input("enter a folder path")
+    folder=input("Enter a folder path : ")
     chunks=ingest(folder)
     embedded_chunks=embed(chunks)
     return embedded_chunks
 if __name__=="__main__":
     result=main()
-    print(f"embedded {len(result)} files")
+    print(f"Embedded {len(result)} files.")
     for file in result:
         print(file["embeddings"])

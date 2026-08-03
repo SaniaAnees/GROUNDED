@@ -11,7 +11,7 @@ def verify(schunk, answer):
         results = []
         for claim in claims:
             for chunk in schunk:
-                score=model.predict([[claim,chunk['content']]])[0]
+                score=float(model.predict([[claim,chunk['content']]])[0])
                 results.append({"claim": claim, "score": score, "source": chunk['filename']})
         return results
     except Exception as e:
@@ -31,4 +31,17 @@ def main():
 
 if __name__=="__main__":
     result = main()
-    print(result)
+    
+    if isinstance(result, str):  # Error case
+        print(result)
+    else:
+        print("\n=== VERIFICATION RESULTS ===\n")
+        for i, r in enumerate(result[:5], 1):  # Top 5 only
+            claim = r['claim'][:70] + "..." if len(r['claim']) > 70 else r['claim']
+            score = r['score']
+            status = "✓ SUPPORTED" if score > 0.7 else "✗ QUESTIONABLE"
+            source = r['source'].name if hasattr(r['source'], 'name') else str(r['source']).split('\\')[-1]
+            
+            print(f"{i}. {claim}")
+            print(f"   Score: {score:.3f} {status}")
+            print(f"   Source: {source}\n")

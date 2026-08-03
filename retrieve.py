@@ -12,8 +12,8 @@ def retrieve(embedded_chunk,question):
 
 
 def main():
-    q=input("enter your question?")
-    folder_path=input("enter your file path")
+    q=input("Enter your question : ")
+    folder_path=input("Enter your file path : ")
     folder=ingest(folder_path)
     echunk=embed(folder)
     schunk=retrieve(echunk,q)

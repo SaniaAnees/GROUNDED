@@ -14,8 +14,8 @@ def generate(schunk,question):
     except Exception as e:
         print(f"An unexpected connection or system error occurred: {e}")
 def main():
-    q=input("enter your question?")
-    folder_path=input("enter your file path")
+    q=input("Enter your question : ")
+    folder_path=input("Enter your file path : ")
     folder=ingest(folder_path)
     echunk=embed(folder)
     schunk=retrieve(echunk,q)
